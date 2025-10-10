@@ -1,8 +1,8 @@
-import JSXRules from "./components/JSXRules";
-
 function App () {
   return (
-   <JSXRules />
+   <section id="section">
+    <p>{2 + 2}</p>
+   </section>
   )
 }
 

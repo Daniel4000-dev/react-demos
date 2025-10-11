@@ -1,8 +1,9 @@
+import './index.css'
+
 function App() {
-  const styles = { color: "white", backgroundColor: "teal", padding: "2rem" };
   return (
     <section>
-      <h1 style={styles}>Inline Style</h1>
+      <h1>Separate File For Styling</h1>
     </section>
   );
 }

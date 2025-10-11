@@ -1,26 +1,38 @@
-const Cart = () => {
-  const items = ["Apple", "Banana", "Orange"]
-
-  return <div>
-    <h1>Cart</h1>
-    {items.length > 2 && <h2>You have {items.length} items in your cart</h2>}
-
-    <ul>
-      <h4>Products</h4>
-      {items.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  </div>
+const Weather = ({ temperature }) => {
+  if (temperature < 15) {
+    return <div>It's cold outside!</div>;
+  } else if (temperature >= 15 && temperature <= 25) {
+    return <div>The weather is moderate.</div>;
+  } else {
+    return <div>it's hot outside</div>;
+  }
 };
 
-
-function App () {
+const UserStatus = ({ loggedIn, isAdmin }) => {
   return (
     <>
-    <Cart />
+    {loggedIn && isAdmin ? "Welcome, Admin!" : loggedIn ? "Welcome, User!" : "Please log in."}
     </>
   )
+}
+
+const Greeting = ({ timeOfDay }) => {
+  return (
+    <>
+    {timeOfDay === 'morning' && <h1>Good Morning</h1>}
+    {timeOfDay === 'afternoon' && <h1>Good Afternoon!</h1>}
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Weather temperature={25} />
+      <UserStatus loggedIn={true} isAdmin={true} />
+      <Greeting timeOfDay="afternoon" />
+    </>
+  );
 }
 
 export default App;

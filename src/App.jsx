@@ -1,16 +1,12 @@
-import { FaCartArrowDown } from "react-icons/fa";
-import { FaComputer } from "react-icons/fa6"
-import './index.css'
-import StyleCard from "./components/StyleCard";
-import ProfileCard from "./components/ProfileCard";
-import IconComponent from "./components/IconComponent";
+const Button = () => {
+  const handleClick = () => console.log('you clicked me'); 
+  return <button onClick={handleClick}>Click Me</button>;
+};
 
 function App() {
   return (
     <section>
-      <StyleCard />
-      <ProfileCard />
-      <IconComponent />
+     <Button />
     </section>
   );
 }

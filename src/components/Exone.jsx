@@ -1,15 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 const Exone = () => {
-    const [count, setCount] = useState(() => Math.floor(Math.random() * 100))
+    const [name, setName] = useState(() => {
+        const savedName = localStorage.getItem('name')
+        return savedName ? JSON.parse(savedName) : "";
+    })
 
-    const gennum = () => {
-        const newNum = Math.floor(Math.random() * 100);
-    setCount(newNum)
+    useEffect(() => {
+        localStorage.setItem('name', JSON.stringify(name))
+    }, [name]);
+
+    const handleChange = (e) => {
+        setName(e.target.value);
     }
+    const handleClear = () => setName('')
+
   return (
     <>
-    <div>Count: {count}</div>
-    <button onClick={gennum}>Generate new randdom numner</button>
+    <div>Name: {name}</div>
+    <input type="text" value={name} onChange={handleChange} placeholder='enter your name' />
+    <button onClick={handleClear}>Clear Name</button>
     </>
   )
 }

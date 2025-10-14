@@ -6,21 +6,14 @@ const state = "states are used to store and manage data that chnage over time an
 const hooks = "hooks are special functions added in react 16.8 that allow you to use state and other React features in functional components"
 const usestate = "useState hook allows us to track state in a functional component. state generally refers to data or properties that need to be tracked in an application."
 function App() {
-  const [friends, setFriends] = useState(['Alex', 'John']);
-  const addOne = () => setFriends([...friends, 'Baan']);
-  const removeOne = () => setFriends(friends.filter((f) => f != "John"));
-  const updateOne = () => {
-    setFriends(friends.map((f) => f === 'Alex' ? 'Alex Smith' : f))
-  }
+  const [movie, setMovie] = useState({
+    title: 'Equalizer 3',
+    ratings: 7,
+  });
   return (
     <section>
-      {friends.map((f) => (
-        <li key={Math.random()}>{f}</li>
-      ))}
-
-      <button onClick={addOne}>Add new friend</button>
-      <button onClick={removeOne}>Remove friend</button>
-      <button onClick={updateOne}>Update one friend</button>
+      <h1>Title: {movie.title}</h1>
+      <p>Rating; {movie.ratings}</p>
     </section>
   );
 }

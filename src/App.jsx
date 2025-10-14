@@ -10,14 +10,7 @@ function App() {
     title: 'Equalizer 3',
     ratings: 7,
   });
-  const handleClick = () => {
-    // const copyMovie = {
-    //   ...movie,
-    //   ratings: 5
-    // }
-
-    setMovie({ ...movie, ratings: 5 }); 
-  }
+  const handleClick = () => setMovie({ ...movie, ratings: 5 }); 
   return (
     <section>
       <h1>Title: {movie.title}</h1>

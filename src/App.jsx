@@ -3,6 +3,7 @@
 import { useState } from "react"
 import ComponentTwo from "./components/ComponentTwo"
 import CompOne from "./components/CompOne"
+import Exone from "./components/Exone"
 
 const state = "states are used to store and manage data that chnage over time and affect how components are rendered"
 const hooks = "hooks are special functions added in react 16.8 that allow you to use state and other React features in functional components"
@@ -11,8 +12,7 @@ function App() {
  const [count, setCount] = useState(0);
   return (
     <section>
-      <ComponentTwo count={count} onClickHandler={() => setCount(count + 1)} />
-      <CompOne count={count} onClickHandler={() => setCount(count + 1)} />
+      <Exone />
     </section>
   );
 }

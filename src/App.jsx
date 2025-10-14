@@ -11,12 +11,12 @@ function App() {
     ratings: 7,
   });
   const handleClick = () => {
-    const copyMovie = {
-      ...movie,
-      ratings: 5
-    }
+    // const copyMovie = {
+    //   ...movie,
+    //   ratings: 5
+    // }
 
-    setMovie(copyMovie)
+    setMovie({ ...movie, ratings: 5 }); 
   }
   return (
     <section>
